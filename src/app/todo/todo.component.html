@@ -1,0 +1,21 @@
+<div class="form-container">
+  <h3>to do</h3>
+  <form class="form-inline justify-content-center">
+    <label class="sr-only" for="task">Task</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" name="task" [(ngModel)]="task" placeholder="Task to be done">
+    <button type="submit" class="btn btn-primary mb-2" [disabled]="!task" (click)="addTask()">Submit</button>
+    <input type="hidden" name="updateid" value="task.id">
+  </form>
+
+  <div class="task-list">
+    <ol class="list-group">The task list
+      <li *ngFor="let i = index; let task of taskList" class="list-group-item mx-3 text-left">
+        {{i+1}} - {{task.task}} - id: {{task.id}}
+        <span class="float-right">
+          <button class="btn btn-primary btn-small mx-3" (click)="updateTask(task.id)">update</button>
+          <button class="btn btn-secondary btn-small mx-3" (click)="deleteTask(task.id)">delete</button>
+        </span>
+      </li>
+    </ol>
+  </div>
+</div>
