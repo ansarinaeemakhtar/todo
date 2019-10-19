@@ -10,7 +10,7 @@
   <div class="task-list">
     <ol class="list-group">The task list
       <li *ngFor="let i = index; let task of taskList" class="list-group-item mx-3 text-left">
-        {{i+1}} - {{task.task}} - id: {{task.id}}
+        {{i+1}}. {{task.task}}
         <span class="float-right">
           <button class="btn btn-primary btn-small mx-3" (click)="updateTask(task.id)">update</button>
           <button class="btn btn-secondary btn-small mx-3" (click)="deleteTask(task.id)">delete</button>
